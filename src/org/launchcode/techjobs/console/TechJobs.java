@@ -2,6 +2,7 @@ package org.launchcode.techjobs.console;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -108,9 +109,30 @@ public class TechJobs {
         return choiceKeys[choiceIdx];
     }
 
-    // Print a list of jobs
-    private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
-        System.out.println("printJobs is not implemented yet");
+    //GET HASHMAP OUT OF THE ARRAY LIST. ARRAY LIST OF HASHMAP CALLED SOMEJOBS.
+//    ARRAY LIST IS A LIST OF THINGS AND HASHMAP IS A DICTIONARY. PULL FROM THE ARRAY LIST OF THE HASMAP. SOMEJOBS ITSELF IS STILL A BAG OF JOBS. CAN'T PULL FROM THE ARRAY LISTJOBS AGAIN THE HASMA
+//            BECAUSE WE ARE IN ANOTHER NESTED. each hashmap that is j we need to loop through j to get our key pair values. job is the entire hashmap and j is each individual pience of this.
+    //you split it out in key and pair value
+    // can't get data from
+//j is a map entry
+
+    private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+//        System.out.println("a");
+
+        for (HashMap <String, String> job : someJobs) {
+            System.out.println("****");
+
+            for (Map.Entry<String, String> j : job.entrySet()) {
+                j.getKey();
+
+                System.out.println(j.getKey() + ": (" + j.getValue() + ")");
+
+            }
+            System.out.println("****\n");
+        }
+//        System.out.println("f");
     }
+
+
 }
