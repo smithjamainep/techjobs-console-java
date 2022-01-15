@@ -70,11 +70,10 @@ public class JobData {
                 System.out.println(r.getValue());
 
 
-//            String aValue = rows.get(row);
-//            System.out.println(aValue + "2");
-
                 if (r.getValue().toLowerCase().contains(value.toLowerCase())) {
                     jobs.add(rows);
+
+                    break;
                 }
             }
 
