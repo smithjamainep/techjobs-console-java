@@ -10,6 +10,7 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by LaunchCode
@@ -46,6 +47,7 @@ public class JobData {
         return values;
     }
 
+
     public static ArrayList<HashMap<String, String>> findAll() {
 
         // load data, if not already loaded
@@ -53,6 +55,33 @@ public class JobData {
 
         return allJobs;
     }
+
+    public static ArrayList<HashMap<String, String>> findByValue( String value) {
+        loadData();
+
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+
+        for (HashMap<String, String> rows : allJobs) {
+
+//            System.out.println(rows);
+
+            for (Map.Entry<String, String> r : rows.entrySet()) {
+//                System.out.println(r);
+                System.out.println(r.getValue());
+
+
+//            String aValue = rows.get(row);
+//            System.out.println(aValue + "2");
+
+                if (r.getValue().toLowerCase().contains(value.toLowerCase())) {
+                    jobs.add(rows);
+                }
+            }
+
+        }
+        return jobs;
+    }
+
 
     /**
      * Returns results of search the jobs data by key/value, using
@@ -126,3 +155,6 @@ public class JobData {
     }
 
 }
+
+//In the JobData class, create a new (public static) method that will search for a string within each of the columns. Name it findByValue. Here are a few observations:
+
